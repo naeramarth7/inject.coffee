@@ -65,12 +65,6 @@ pagination_dir: page
 ## Themes: http://hexo.io/themes/
 theme: tranquilpeak
 
-deploy:
-  type: s3
-  bucket: inject.coffee
-  concurrency: 5
-  region: us-west-2
-
 # RSS feed settings
 feed:
     type: atom
