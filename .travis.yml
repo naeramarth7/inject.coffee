@@ -1,7 +1,9 @@
 language: node_js
 node_js: 0.12
 install: npm install
-script: hexo gzip
+script:
+  - hexo generate
+  - hexo gzip
 
 deploy:
   provider: s3

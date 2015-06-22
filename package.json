@@ -15,7 +15,7 @@
     "hexo-generator-feed": "^1.0.2",
     "hexo-generator-index": "^0.1.2",
     "hexo-generator-tag": "^0.1.1",
-    "hexo-gzip": "0.0.1",
+    "hexo-gzip": "naeramarth7/hexo-gzip",
     "hexo-html-minifier": "0.0.1",
     "hexo-renderer-coffeescript": "^0.1.0",
     "hexo-renderer-ejs": "^0.1.0",
