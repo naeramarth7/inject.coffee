@@ -7,7 +7,7 @@ title: inject.coffee
 subtitle: Injecting coffee into code since '08
 description:
 author: Sven Flickinger
-language:
+language: en
 timezone:
 
 # URL
@@ -67,6 +67,6 @@ theme: tranquilpeak
 
 # RSS feed settings
 feed:
-    type: atom
-    path: atom.xml
-    limit: 20
+  type: atom
+  path: atom.xml
+  limit: 20
