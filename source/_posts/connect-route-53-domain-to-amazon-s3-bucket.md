@@ -16,8 +16,8 @@ In {% post_link hexo-travis-s3-part-2-deploying-to-aws %} we got our site deploy
 With a domain registered at Amazon Route 53, we have to set up a hosted zone for this Domain. Head over to [Route 53](https://console.aws.amazon.com/route53/home) » **Hosted Zones** and create a new one.
 
 <img
-  src="/{{slug}}/route-53_create-hosted-zone.png"
-  width="469" height="268"
+  src="/{{slug}}/route-53_create-hosted-zone.min.png"
+  width="469"
   alt="Route 53: Create Hosted Zone"
   title="Route 53: Create Hosted Zone">
 
@@ -26,16 +26,16 @@ The *NS* and *SOA* records should already be set up for you. What we need now, i
 Hit **Create Record Set**, set the type to `A`, make it an `ALIAS` and select our S3 bucket as the alias target:
 
 <img
-  src="/{{slug}}/route-53_add-s3-alias-1.png"
-  width="413" height="355"
+  src="/{{slug}}/route-53_add-s3-alias-1.min.png"
+  width="413"
   alt="Route 53: Create S3 Alias"
   title="Route 53: Create S3 Alias">
 
 This makes our S3 bucket available at **inject.coffee**, but we also want it to be available on the **www** subdomain, so we set up another **A** record pointing to the first one:
 
 <img
-  src="/{{slug}}/route-53_add-s3-alias-2.png"
-  width="420" height="352"
+  src="/{{slug}}/route-53_add-s3-alias-2.min.png"
+  width="420"
   alt="Route 53: Create another S3 Alias"
   title="Route 53: Create another S3 Alias">
 
@@ -44,7 +44,7 @@ This makes our S3 bucket available at **inject.coffee**, but we also want it to 
 If we have our domain registered with a different registrar than Amazon, we have to change the at our registrar **nameservers** to match the ones given by our Hosted Zones **NS** record.
 
 <img
-  src="/{{slug}}/route-53_hosted-zone-nameservers.png"
-  width="611" height="183"
+  src="/{{slug}}/route-53_hosted-zone-nameservers.min.png"
+  width="611"
   alt="Route 53: Hosted Zone Nameservers"
   title="Route 53: Hosted Zone Nameservers">

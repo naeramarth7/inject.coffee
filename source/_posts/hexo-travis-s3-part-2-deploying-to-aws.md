@@ -20,8 +20,8 @@ Amazon S3 is the static file hosting part of AWS - it just serves the files we s
 First of all, we head over to [Amazon S3](https://console.aws.amazon.com/s3/home) to create the S3 bucket for our website. In this case we name the bucket just as the domain itself.
 
 <img
-  src="/{{slug}}/s3_create-bucket.png"
-  width="741" height="390"
+  src="/{{slug}}/s3_create-bucket.min.png"
+  width="741"
   alt="Amazon S3: Create bucket"
   title="Amazon S3: Create bucket">
 
@@ -38,8 +38,8 @@ After the bucket is created, we enter it, select the **Properties** tab on the t
 #### Permissions
 
 <img
-  src="/{{slug}}/s3_permissions.png"
-  width="624.5" height="463"
+  src="/{{slug}}/s3_permissions.min.png"
+  width="624.5"
   alt="Amazon S3: Permissions"
   title="Amazon S3: Permissions">
 
@@ -65,8 +65,8 @@ In the Permissions section, click on **Add bucket policy** and insert the follow
 Since we're using a static site generator, this is exactly what we're looking for. Therefor we **enable website hosting** and set the **index document** to `index.html`:
 
 <img
-  src="/{{slug}}/s3_static-website-hosting.png"
-  width="549" height="441"
+  src="/{{slug}}/s3_static-website-hosting.min.png"
+  width="549"
   alt="Amazon S3: Static Website Hosting"
   title="Amazon S3: Static Website Hosting">
 
@@ -106,8 +106,8 @@ We want to use a dedicated user for your Hexo website, so a click on **New User*
 We can also create a new key pair if we forgot to save the one created initially. Just head over into the users settings and hit **Create Access Key**.
 
 <img
-  src="/{{slug}}/iam_create-access-key-1.png"
-  width="525" height="279"
+  src="/{{slug}}/iam_create-access-key-1.min.png"
+  width="525"
   alt="Amazon IAM: Create Access Key"
   title="Amazon IAM: Create Access Key">
 
@@ -115,8 +115,8 @@ We'll then be prompted with the newly created key pair.
 **Important:** Make sure to delete the old ones you're not using anymore.
 
 <img
-  src="/{{slug}}/iam_create-access-key-2.png"
-  width="612" height="354"
+  src="/{{slug}}/iam_create-access-key-2.min.png"
+  width="612"
   alt="Amazon IAM: Create Access Key"
   title="Amazon IAM: Create Access Key">
 
@@ -137,8 +137,8 @@ arn:aws:s3:::inject.coffee/*
 Finally, the new statement should look like this:
 
 <img
-  src="/{{slug}}/iam_create_policy.png"
-  width="525" height="279"
+  src="/{{slug}}/iam_create_policy.min.png"
+  width="525"
   alt="Amazon IAM: Create Policy"
   title="Amazon IAM: Create Policy">
 
@@ -147,8 +147,8 @@ Hit **Add Statement**, go to the **Next Step** and give our policy a meaningfull
 Now inside of the created policy, we attach an entity: our previoulsy created user - in this case _hexo-s3_.
 
 <img
-  src="/{{slug}}/iam_attach-policy-user.png"
-  width="765" height="297"
+  src="/{{slug}}/iam_attach-policy-user.min.png"
+  width="765"
   alt="Amazon IAM: Attach Users to Policy"
   title="Amazon IAM: Attach Users to Policy">
 
