@@ -4,8 +4,7 @@ tags:
 date: 2015-07-29 20:35:48
 ---
 
-
-As stated in the {% post_link hexo-with-travis-ci-on-amazon-s3-introduction Introduction %}, Hexo is build on [Node.js](https://nodejs.org/). So, if not already done, install it! I recommend using [nvm](https://github.com/creationix/nvm), the **n**ode **v**ersion **m**anager.
+As stated in the {% post_link hexo-travis-s3-introduction Introduction %}, Hexo is build on [Node.js](https://nodejs.org/). So, if not already done, install it! I recommend using [nvm](https://github.com/creationix/nvm), the **n**ode **v**ersion **m**anager.
 
 <!-- more -->
 
@@ -13,7 +12,7 @@ As stated in the {% post_link hexo-with-travis-ci-on-amazon-s3-introduction Intr
 
 On OS X using brew, this is the [preferred way](https://stackoverflow.com/questions/28017374/what-is-the-suggested-way-to-install-brew-node-js-io-js-nvm-npm-on-os-x):
 
-```bash
+{% codeblock lang:bash Install node.js on OS X %}
 brew update
 brew install nvm
 # depending on your environment, change use .profile, .bashrc or .zshrc
@@ -21,21 +20,21 @@ echo "source $(brew --prefix nvm)/nvm.sh" >> ~/.profile
 source ~/.profile
 nvm install 0.12
 nvm default 0.12
-```
+{% endcodeblock %}
 
 Otherwise install `nvm` using the install script provided on github:
 
-```bash
+{% codeblock Install node.js - alternative way %}
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 nvm install 0.12
 nvm default 0.12
-```
+{% endcodeblock %}
 
 # Setting up a new hexo website
 
 Now that we have `node` and `npm` (which ships with `node`), we can install `hexo` and create our first website with just a few commands:
 
-```bash
+{% codeblock lang:bash Install and run Hexo %}
 # Install hexo globally
 npm install -g hexo
 
@@ -48,7 +47,7 @@ npm install
 
 # Start a local webserver serving your new hexo website
 hexo server
-```
+{% endcodeblock %}
 
 That's it! Open [localhost:4000](http://localhost:4000/) in your browser to see Hexo in action - using the Hexo 3 default theme [landscape](https://github.com/hexojs/hexo-theme-landscape).
 
@@ -56,17 +55,17 @@ That's it! Open [localhost:4000](http://localhost:4000/) in your browser to see 
 
 Now that you got everything up and running, don't forget to set up a repository and version control your new website. The Hexo generator already provides a `.gitignore` file for the basic assets and logs.
 
-```bash
+{% codeblock lang:bash Set up initial git repo %}
 git init
 git add .
 git commit -m 'initial commit'
-```
+{% endcodeblock %}
 
 ## File and folders
 
 Let's take a look at Hexo's file structure:
 
-```bash
+{% codeblock Hexo file structure %}
 drwxr-xr-x  7 root root  4096 Jun 22 14:17 .
 drwxr-xr-x  3 root root  4096 Jun 22 14:12 ..
 drwxr-xr-x  8 root root  4096 Jun 22 14:18 .git
@@ -78,7 +77,7 @@ drwxr-xr-x 12 root root  4096 Jun 22 14:12 node_modules
 drwxr-xr-x  2 root root  4096 Jun 22 14:12 scaffolds
 drwxr-xr-x  3 root root  4096 Jun 22 14:12 source
 drwxr-xr-x  3 root root  4096 Jun 22 14:12 themes
-```
+{% endcodeblock %}
 
 |               |                                                                                                                    |
 |---------------|--------------------------------------------------------------------------------------------------------------------|
@@ -100,7 +99,7 @@ There are multiple ways of installing an existing theme for your Hexo website. T
 
 #### Option 1: Install as git submodule
 
-```bash
+{% codeblock lang:bash Install theme as git submodule %}
 git submodule add https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme themes/tranquilpeak
 cd themes/tranquilpeak
 
@@ -110,25 +109,30 @@ npm install -g bower grunt-cli
 npm install
 bower install
 grunt build
-```
+{% endcodeblock %}
 
 #### Option 2: Install as part of the repository
 
-```bash
+{% codeblock lang:bash Install theme as part of repo %}
 cd themes
 curl -L https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.2.0/tranquilpeak-hexo-theme-built-for-production-1.2.0.zip > tranquilpeak.zip
 unzip tranquilpeak.zip
 rm tranquilpeak.zip
 mv tranquilpeak-hexo-theme-built-for-production-1.2.0 tranquilpeak
-```
+{% endcodeblock %}
 
 #### Enabling a theme
 
 After the installation, change the `theme` variable inside `_config.yml` to your themes (folder) name
 
-```yaml
+{% codeblock lang:yaml _config.yml %}
+...
+
 theme: tranquilpeak
-```
+
+...
+{% endcodeblock %}
+
 **Note:** When making changes to the `_config.yml` file, you need to cancel at start the `hexo server` over, since those changes are not detected on run time.
 
 For further configuration and customization, take a look at Hexo's `_config.yml` as well as the one the theme of your choice provides.
